@@ -1,5 +1,12 @@
 # vuexx
 
+- [ ] Buat Halaman Home
+- [ ] Buat Halaman Cart
+- [ ] Data + Photo
+- [ ] Detail Product
+- [ ] List Checkout
+- [ ] Card Checkout, Harga, close, add & subtract
+- [ ] Final Checkout, Subtotal, PPN 10%, Total
 ## Project setup
 ```
 npm install
