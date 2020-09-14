@@ -4,16 +4,15 @@
         <div class="card-body">
             <div class="d-block w-100">
                 <p class="card-text d-inline-block pb-1">Subtotal</p>
-                <p class="card-text d-inline-block float-right pb-1">Rp. 14.000</p>
-                {{ subTotalPrice }}
+                <p class="card-text d-inline-block float-right pb-1">{{ subTotalPrice.calcSub | currency }}</p>
             </div>
             <div class="d-block w-100">
                 <p class="card-text d-inline-block pb-1">PPN 10%</p>
-                <p class="card-text d-inline-block float-right pb-1">Rp. 14.000</p>
+                <p class="card-text d-inline-block float-right pb-1">{{ subTotalPrice.ppn | currency }}</p>
             </div>
             <div class="d-block w-100">
                 <p class="card-text d-inline-block pb-0">Total</p>
-                <p class="card-text d-inline-block float-right pb-0">Rp. 14.000</p>
+                <p class="card-text d-inline-block float-right pb-0">{{ subTotalPrice.total | currency }}</p>
             </div>
             <button type="button" class="btn btn-outline-success w-100">Checkout</button>
         </div>
@@ -27,13 +26,11 @@ export default {
         ...mapState(['postData']),
         subTotalPrice() {
             let subTotal = this.postData
-            console.log(subTotal)
-            // let sub = subTotal.forEach(sub => {sub})
-            let sub = subTotal.forEach(function(sub) { 
-                console.log(sub);
-            });
-            console.log(sub)
-            return sub
+            let calcSub = 0
+            subTotal.forEach((sub) => {calcSub += sub.price});
+            let ppn = calcSub * 10 / 100  
+            let total = calcSub - ppn
+            return { calcSub, ppn, total }
         }
     }
 }

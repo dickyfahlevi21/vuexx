@@ -6,9 +6,9 @@
                 <router-link :to="`carts`" class="btn btn-info">
                     <i class="fas fa-cart-arrow-down icon-cart"></i>
                 </router-link>
-                <p class="text-cart">0</p>
+                <p class="text-cart">{{ totalItemCart }}</p>
             </div>
-            <input class="form-control form-control-lg" type="text" placeholder="Cari Barangmu Disini...">
+            <search-box />
         </div>
         <!-- List Item -->
         <div class="container">
@@ -31,10 +31,18 @@
 </template>
 <script>
 import { mapState } from 'vuex'
+import SearchBox from '@/components/Home/SearchBox.vue'
 export default {
     name: 'ListItem',
+    components: {
+        SearchBox
+    },
     computed: {
-        ...mapState(['postData'])
+        ...mapState(['postData']),
+        totalItemCart() {
+            let totalItem = this.postData.length
+            return totalItem
+        }
     },
 }
 </script>
