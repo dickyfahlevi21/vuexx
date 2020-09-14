@@ -1,8 +1,8 @@
 # vuexx
 
-- [ ] Buat Halaman Home
-- [ ] Buat Halaman Cart
-- [ ] Data + Photo
+- [x] Buat Halaman Home
+- [x] Buat Halaman Cart
+- [x] Data + Photo
 - [ ] Detail Product
 - [ ] List Checkout
 - [ ] Card Checkout, Harga, close, add & subtract
