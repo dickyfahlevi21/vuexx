@@ -5,8 +5,8 @@ import store from './store'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-Vue.config.productionTip = false
 
+Vue.config.productionTip = false
 
 Vue.filter('currency', function (value) {
   if (!value) return ''

@@ -3,7 +3,7 @@
 - [x] Buat Halaman Home
 - [x] Buat Halaman Cart
 - [x] Data + Photo
-- [ ] Detail Product
+- [x] Detail Product
 - [ ] List Checkout
 - [ ] Card Checkout, Harga, close, add & subtract
 - [ ] Final Checkout, Subtotal, PPN 10%, Total
